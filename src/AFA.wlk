@@ -1,15 +1,18 @@
-import bin.jugadores.abc
-import bin.estadio.abc
+import jugadores.*
+import estadio.*
 
 
 object afa {
+    var precioDeEntrada = 10000
 
-    method precioDeEntrada() = 10000
+    method precioDeEntrada() = precioDeEntrada
 
-    method cantidadDeEntradas() = jugador.popularidad() * capacidad
+    method inflacion(nuevoPrecio) {precioDeEntrada = nuevoPrecio} 
 
-    method recaudacion() = self.precioDeEntrada() * self.cantidadDeEntradas()
+    method cantidadDeEntradas(jugador, estadio) = jugador.popularidad() * estadio.capacidad()
+
+    method recaudacion() = self.precioDeEntrada() * self.cantidadDeEntradas(jugador, estadio)
     
-    method logistica() =  self.recaudacion() - jugador.
+    method logistica(jugador) =  self.recaudacion() - jugador.
 
 }

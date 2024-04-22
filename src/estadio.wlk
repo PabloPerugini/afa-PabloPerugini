@@ -1,9 +1,18 @@
 object bombonera {
-    var capacidad = 50000
     
-    method alquier() = 1000000
+    method alquiler() = 1000000
 
-    method capacidad() = capacidad 
+    method capacidad() = 50000
 
+}
 
+object monumental {
+    var estaEnObras = true
+
+    method estaEnObras() = estaEnObras
+
+    method capacidad() = if (estaEnObras) 65000 else 85000
+
+    method alquiler() =  1500000
+  
 }
